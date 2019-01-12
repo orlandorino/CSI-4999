@@ -1,0 +1,14 @@
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\bin\Debug\netcoreapp2.1\StockApp.deps.json
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\bin\Debug\netcoreapp2.1\StockApp.runtimeconfig.json
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\bin\Debug\netcoreapp2.1\StockApp.runtimeconfig.dev.json
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\bin\Debug\netcoreapp2.1\StockApp.dll
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\bin\Debug\netcoreapp2.1\StockApp.pdb
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\obj\Debug\netcoreapp2.1\StockApp.csproj.CoreCompileInputs.cache
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\obj\Debug\netcoreapp2.1\StockApp.RazorAssemblyInfo.cache
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\obj\Debug\netcoreapp2.1\StockApp.RazorAssemblyInfo.cs
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\obj\Debug\netcoreapp2.1\StockApp.AssemblyInfoInputs.cache
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\obj\Debug\netcoreapp2.1\StockApp.AssemblyInfo.cs
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\obj\Debug\netcoreapp2.1\StockApp.RazorTargetAssemblyInfo.cache
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\obj\Debug\netcoreapp2.1\StockApp.dll
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\obj\Debug\netcoreapp2.1\StockApp.pdb
+C:\Users\orlan\Desktop\CSI_4999\Stock Market Application\StockApp\obj\Debug\netcoreapp2.1\StockApp.csprojAssemblyReference.cache
