@@ -4,6 +4,7 @@ from matplotlib import style
 import pandas as pd
 import pandas_datareader.data as web
 from pandas_datareader import data
+from pandas import ExcelWriter
 
 
 # style.use('ggplot')
@@ -24,6 +25,9 @@ real_tickers = ['SPY','AMZN','QQQ','AAPL','FB','NVDA','NFLX','IWM','BABA','EEM',
 start_date = '2019-01-01'
 end_date = '2019-01-20'
 
-panel_data = data.DataReader(tickers,'yahoo',start_date,end_date)
+panel_data = data.DataReader(real_tickers,'yahoo',start_date,end_date)
 
-print (panel_data)
+# export to csv
+panel_data.to_csv('PythonExportCSV.csv',sep=',')
+
+# print (panel_data)
