@@ -23,6 +23,7 @@ import pandas as pd
 import pandas_datareader.data as web
 from pandas_datareader import data
 from pandas import ExcelWriter
+import numpy as np
 
 style.use('ggplot')
 
@@ -50,6 +51,8 @@ print (df)
 # 3 stock tickers chosen randomly for simple queries or debugging.
 tickers = ['AAPL','MSFT','TSLA']
 
+oneticker = ['AAPL']
+
 # Top 100 stocks analyzed.
 real_tickers = ['SPY','AMZN','QQQ','AAPL','FB','NVDA','NFLX','IWM','BABA','EEM','MSFT','MU','GOOGL','TSLA','BAC','GOOG','BA','JPM','EFA','INTC','XLF','DIA','VXX','HYG','C','CSCO','IVV','XOM','FXI','XLE','TQQQ','WFC','GE','XLI','V','XLK','TWTR','WMT','AVGO','HD','TLT','CMCSA','CVX','GDX','BRK-B','T','CAT','JNJ','GLD','AMGN','XLU','UNH','DIS','AMAT','CRM','PFE','MA','MCD','BIDU','GS','VZ','SQ','LRCX','XLP','ORCL','ABBV','PG','IBM','XOP','VOO','ADBE','SPOT','LQD','AMD','MRK','XLV','IYR','QCOM','PYPL','IEMG','SMH','EWZ','XLY','UNP','TXN','LOW','NXPI','DWDP','UTX','MMM','VWO','CELG','EWJ','AABA','CVS','KO','LMT','MS','WYNN','PM']
 
@@ -58,10 +61,61 @@ start_date = '2016-01-01'
 end_date = end
 
 # Read data from online panel.
-panel_data = data.DataReader(real_tickers,'yahoo',start_date,end_date)
+panel_data = data.DataReader(oneticker,'yahoo',start_date,end_date)
 
 # Early functionality used to save data to a .csv file.
 panel_data.to_csv('KeyosStockDataTickerValuesCSV.csv',sep=',')
 
-# print (panel_data)
+print (panel_data)
+
+
+#import data
+data = pd.read_csv('data_stocks.csv')
+
+# Drop date variable
+data = data.drop(['DATE'], 1)
+
+# Dimensions of dataset
+n = data.shape[0]
+p = data.shape[1]
+
+# Make data a numpy array
+data = data.values
+
+# training and test data
+train_start = 0
+train_end = int(np.floor(0.8*n))
+test_start = train_end
+test_end = n
+data_train = data[np.arange(train_start, train_end), :]
+data_test = data[np.arange(test_start, test_end), :]
+
+# Scale data
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+
+data_train = scaler.fit_transform(data_train)
+data_test = scaler.transform(data_test)
+
+# Build X and y
+X_train = data_train[:, 1:]
+y_train = data_train[:, 0]
+X_test = data_test[:, 1:]
+y_test = data_test[:, 0]
+
+# Import TensorFlow
+import tensorflow as tf
+
+# Define a and b as placeholders
+a = tf.placeholder(dtype=tf.int8)
+b = tf.placeholder(dtype=tf.int8)
+
+# Define the addition
+c = tf.add(a, b)
+
+# Initialize the graph
+graph = tf.Session()
+
+# Run the graph
+graph.run(c, feed_dict={a: 5, b: 4})
 
